@@ -69,6 +69,20 @@
           </div>
         </div>
       </div>
+      <script>
+        function getRandomColor() {
+          let letters = "0123456789ABCDEF";
+          let color = "#";
+          for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+        }
+        function changeBackgroundColor() {
+          document.body.style.backgroundColor = getRandomColor();
+        }
+        setInterval(changeBackgroundColor, 1000);
+      </script>
       <div id="services" class="row" style="background-color: lightblue">
         <h1>Services</h1>
         <div style="display: flex">
@@ -155,6 +169,7 @@
           </div>
         </div>
       </div>
+
       <div class="footer">@copyright 2024. All rights reserved.</div>
     </div>
   </body>
