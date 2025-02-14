@@ -4,90 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script>
-      const products = [
-        { id: 1, name: "P1", price: 34 },
-        { id: 2, name: "P2", price: 50 },
-        { id: 3, name: "P3", price: 40 },
-      ];
-      const cart = {};
-
-      const addToCart = (id) => {
-        if (!cart[id]) {
-          cart[id]=1;
-          items.innerHTML=0
-        }
-        showCart();
-      };
-
-      const increment = (id) => {
-        if(!cart[id]) cart[id]=1;
-        items.innerHTML=100
-        cart[id]=cart[id]+1;
-        showCart();
-      };
-
-      const decrement = (id) => {
-        if (cart[id] > 1) {
-          cart[id]--; 
-        } else {
-          delete cart[id];
-        }
-        showCart();
-      };
-      const deleteCart = (id) => {
-        delete cart[id];
-        showCart();
-      };
-        const showTotal=()=>
-        {
-     let total=products.reduce((sum,value)=>
-    {
-        return sum+(value.price*cart[value.id]? cart[value.id]:0);
-     },0);
-            total.innerHTML=total;
-        };
-      const showCart = () => {
-        let count=Object.keys(cart).length
-        items.innerHTML=count
-        showTotal();
-        let str = "";
-        products.map((value) => {
-          if (cart[value.id]) {
-            str += `<div>
-                      ${value.id} - ${value.name} - ${value.price} - 
-                      <button onclick='decrement(${value.id})'>-</button>
-                      ${cart[value.id]}
-                      <button onclick='increment(${value.id})'>+</button>
-                      - ${value.price * cart[value.id]}
-                      <button onclick="deleteCart(${value.id})">Delete</button>
-                    </div>`;
-          }
-        });
-        document.getElementById("divCart").innerHTML = str;
-        showTotal();
-      };
-
-      const showProducts = () => {
-        let str = "";
-        products.forEach((value) => {
-          str += `<div>
-                    ${value.id} - ${value.name} - ${value.price} - 
-                    <button onclick='addToCart(${value.id})'>Add to Cart</button>
-                  </div>`;
-        });
-        document.getElementById("divProducts").innerHTML = str;
-      };
-    </script>
+    <link rel="stylesheet" href="p3.css" />
+    <script src="p3.js"></script>
   </head>
-  <body onload="showProducts()">
-    <h1 style="background-color:rgb(255, 194, 245) ;color: rgb(0, 0, 0);">My Store</h1>
-    <h4>Cart:<span id="items"></span></h4>
+  <body>
+    <div class="header">
+      <h1>My Store</h1>
+      <h4 onclick="displayCart()">Cart:<span id="items"></span></h4>
+    </div>
+
     <hr />
-    <h3 style="background-color: rgb(217, 226, 34);color: rgb(116, 114, 112);">Products</h3>
-    <div id="divProducts"></div>
-    <h3 style="background-color: rgb(231, 107, 148);">My Cart</h3>
-    <div id="divCart"></div>
-    <h4>Order Value:<span id="total">0</span></h4>
+
+    <div id="productBox">
+      <div id="divProducts"></div>
+    </div>
+
+    <div id="cartBox" style="display: none">
+      <h3>My Cart</h3>
+      <div id="divCart"></div>
+      <h4>Order value:<span id="order"></span></h4>
+      <button onclick="hideCart()">Close</button>
+    </div>
+    <hr />
+    <h4>@Copyright 2025. All rights reserved.</h4>
   </body>
 </html>
