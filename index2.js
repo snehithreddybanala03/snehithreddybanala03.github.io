@@ -36,6 +36,7 @@ function saveData() {
       if (type == "1") {
         console.log("testing");
         users[i].balance += amount;
+        root.innerHTML=
         spBalance.innerHTML = users[i].balance;
       } else if (type == "2") {
         users[i].balance -= amount;

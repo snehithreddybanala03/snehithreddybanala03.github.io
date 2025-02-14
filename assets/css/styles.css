@@ -8,13 +8,20 @@
     scroll-behavior: smooth;
     height: 100%;
   }
+  body {
+    font-family:
+    line-height: 1.6;
+    color: #070505;
+    background: linear-gradient(to left, #b52157, #1fdcd6);
+    background-size: 200% 200%;
+}
 
   .header-row {
-    background-color: orange;
+    background-color: linear-gradient(to left, #b52157, #1fdcd6);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position:sticky;
     top: 0px;
   }
 
@@ -55,7 +62,7 @@
   }
 
   button {
-    background-color: teal;
+    background-color: rgb(232, 141, 203);
     padding: 10px;
     color: white;
     border: none;
