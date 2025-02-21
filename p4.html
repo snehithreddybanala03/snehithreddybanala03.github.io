@@ -145,8 +145,8 @@
           <p>Name:${firstname} ${surname}</p>
           <p>Email:${email}</p>
           <p>Password:${password}</p>
-          <p>Gender:${g}</p>
           <p>Interests: ${interests.length > 0 ? interests.join(", ") : "None"}</p>
+          <p>Gender:${g}</p>
           <p>Date of Birth:${dob}</p>
           <button>Confirm</button>
           <button onclick=showForm()>Edit</button>
@@ -228,7 +228,7 @@
       </div>
       <div class="row" style="justify-content: start">
         <div class="leftCaption">
-          Intrest<span class="qMark"
+          Interest<span class="qMark"
             ><abbr title="Click for more information">?</abbr></span
           >
         </div>
@@ -293,8 +293,8 @@
         }
       };
       const togglePronounn = () => {
-        let p = document.getElementsByName("Intrest");
-        prSelect.style.display="Intrest";
+        let p = document.getElementsByName("Intresets");
+        prSelect.style.display="Intresets";
       };
       const togglePronoun = () => {
         let p = document.getElementsByName("gender");
