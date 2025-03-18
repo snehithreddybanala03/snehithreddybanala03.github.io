@@ -45,11 +45,11 @@
 
   .row {
     padding: 100px;
-    height: 75%;
+    height: 100%;
   }
 
   .row .box {
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
   }
 
